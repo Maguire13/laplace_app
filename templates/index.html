@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Laplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Cargar MathJax para renderizar ecuaciones -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Laplace</h2>
+
+        <!-- Bloque de error -->
+        {% if error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        <form method="post" class="form">
+             <!-- <label for="operacion" class="label">Selecciona una operación:</label>
+            <select name="operacion" required class="input">
+                <option value="directa">Transformada de Laplace (Directa)</option>
+                <option value="inversa">Transformada Inversa de Laplace</option>
+            </select>-->
+            <label for="funcion" class="label">Ingresa la función:</label>
+            <input type="text" name="funcion" placeholder="Ejemplo: sin(t) + cos(2*t)" required class="input">
+            <button type="submit" class="button">Calcular</button>
+        </form>
+
+        {% if resultado %}
+            <div class="resultado">
+                <h3 class="titulo">Pasos detallados:</h3>
+                <ol>
+                    {% for paso in pasos %}
+                        <li class="latex">{{ paso | safe }}</li><br>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            MathJax.typeset(); // Renderiza todas las ecuaciones LaTeX
+        });
+    </script>
+</body>
+</html>
+
+
+

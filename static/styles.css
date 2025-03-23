@@ -1,0 +1,114 @@
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #869B9F;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #233138;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezados */
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.titulo {
+    color: #2d6a4f;
+    margin-bottom: 10px;
+}
+
+/* Formulario */
+.form {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 1.1em;
+    color: white;
+}
+
+.input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.button {
+    padding: 10px 15px;
+    font-size: 1em;
+    color: white;
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+/* Resultados */
+.resultado {
+    background: #e9f7ef;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #b2d8c3;
+    margin-top: 20px;
+}
+
+.lista-pasos {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.latex {
+    font-size: 1em;
+    color: #444;
+}
+
+.resultado-final {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Bloque de error */
+.error {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 10px;
+    border: 1px solid #d8000c;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
